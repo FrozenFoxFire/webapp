@@ -1,4 +1,4 @@
-import NewsArticle from "./NewsArticle.tsx";
+import NewsArticle from './NewsArticle.tsx';
 
 interface NewsResult {
   status: string;

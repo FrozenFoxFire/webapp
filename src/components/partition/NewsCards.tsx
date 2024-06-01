@@ -9,7 +9,7 @@ interface Props {
 
 function NewsCards({ cards }: Props): JSX.Element {
   return (
-    <Grid id='news-cards-container' className='newscards-container' container item xs={12} direction="row" >
+    <Grid id="news-cards-container" className="newscards-container" container item xs={12} direction="row">
       {cards.map((card: Card) => (
         <NewsCard key={card.id} card={card} />
       ))}

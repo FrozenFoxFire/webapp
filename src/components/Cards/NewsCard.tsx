@@ -8,7 +8,14 @@ interface Props {
 
 function NewsCard({ card }: Props): JSX.Element {
   return (
-    <Grid container item xs={2} textAlign="center" alignContent="center" sx={{ borderStyle: 'solid', borderWidth: '0.05rem', borderColor: 'azure' }}>
+    <Grid
+      container
+      item
+      xs={2}
+      textAlign="center"
+      alignContent="center"
+      sx={{ borderStyle: 'solid', borderWidth: '0.05rem', borderColor: 'azure' }}
+    >
       <Grid container item spacing={2}>
         <Grid item xs={12} sx={{ flexGrow: 1 }}>
           <Typography>{card.name}</Typography>
