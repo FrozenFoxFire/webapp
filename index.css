@@ -103,10 +103,28 @@ button:focus-visible {
 
 .newscard-item {
   text-align: center;
-  align-content: center;
+  align-content: start;
   border-style: solid;
-  border-width: 0.05rem;
   border-color: azure;
+  border-width: 0.05rem;
+}
+
+.newscard-title {
+  font-size: 0.75rem !important;
+  width: 100%;
+}
+
+.newscard-author {
+  border-style: solid;
+  border-color: aliceblue;
+  border-width: 0.05rem;
+  font-size: 0.65rem !important;
+  width: 100%;
+}
+
+.newscard-description {
+  font-size: 1rem !important;
+  width: 100%;
 }
 
 .filter-bar {

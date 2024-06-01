@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Grid, Stack, Typography} from '@mui/material';
 import Card from '../../components/models/Card.tsx';
 import NewsCards from '../../components/partition/NewsCards.tsx';
@@ -78,9 +78,9 @@ function News({ debug = false, skip = false }: Props) {
     <Stack id="app-news-content" textAlign="center" alignContent="center">
       <Grid id='app-news-content-container' className='grid-item-no-padding carousel-container'
             container item xs={12} textAlign='center' direction='column' spacing={5}>
-        <Grid id='app-news-filters-container' className='filter-bar' item xs={12}>
+        <Grid id='app-news-filters-container' className='filter-bar' container item xs={12} spacing={2}>
           <Typography>Your News here!</Typography>
-          <SelectionSearchText debug={debug} title='Search the News' topics={[]} />
+          <SelectionSearchText debug={debug} title='Search your Tags' topics={[]} />
         </Grid>
         <Grid id="app-news-carousel-controller" container item direction="row" spacing={2}>
         <Grid

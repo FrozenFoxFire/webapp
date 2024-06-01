@@ -17,6 +17,7 @@ function SelectionSearchText({ debug, title = 'Search Terms', topics = [] }: Pro
     value={searchText}
     onChange={(_event, value) => setSearchText(value ?? '')}
     options={topics}
-    renderInput={(params) => <TextField {...params} label={title} />}/>
+    renderInput={(params) => <TextField {...params} label={title} />}
+  />
 }
 export default SelectionSearchText;
