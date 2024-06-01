@@ -1,5 +1,5 @@
 import axios from 'axios';
-import NewsResult from '../components/models/NewsResult.tsx';
+import {NewsArticle} from "../components/models";
 
 interface Props {
   url: string;
@@ -10,16 +10,16 @@ interface Props {
 
 const API_KEY = process?.env?.NEWS_API_KEY;
 
-const fetchNews = async ({ from, sortBy, term, url }: Props): Promise<NewsResult> => {
+const fetchNews = async ({ from, sortBy, term, url }: Props): Promise<NewsArticle[]> => {
   return axios
     .get(`${url}?q=${term}&from=${from}&sortBy=${sortBy}&apiKey=${API_KEY}`)
     .then((response) => {
       console.log({ response });
-      return response.data;
+      return response.data?.articles ?? [];
     })
     .catch((error) => {
       console.log(error);
-      return { status: 'error', message: 'Something went wrong' };
+      return [];
     });
 };
 

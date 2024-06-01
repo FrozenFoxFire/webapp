@@ -1,9 +1,9 @@
 interface Card {
   id: string;
-  name: string;
+  name?: string;
   title: string;
   description: string;
-  author: string;
+  author?: string;
   image: string;
 }
 export default Card;

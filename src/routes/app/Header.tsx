@@ -15,10 +15,12 @@ function Header({ title, selectionChanged }: Props) {
   }
 
   return (
-    <Box id="app-header" textAlign="center" alignContent="start" minHeight="5rem">
+    <Box id="app-header" textAlign="center" alignContent="start" minHeight="5rem" flexDirection='column'>
       <Typography id="app-title">{title}</Typography>
-      <Box onClick={() => updateSelection(DisplayedComponents.news)}>News</Box>
-      <Box onClick={() => updateSelection(DisplayedComponents.crypto)}>Crypto</Box>
+      <Box display="flex" flexDirection='row' justifyContent="center" >
+        <Box px='1rem' onClick={() => updateSelection(DisplayedComponents.news)}>News</Box>
+        <Box px='1rem' onClick={() => updateSelection(DisplayedComponents.crypto)}>Crypto</Box>
+      </Box>
     </Box>
   );
 }
