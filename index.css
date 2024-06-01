@@ -68,7 +68,7 @@ button:focus-visible {
 }
 
 /* Custom Classes */
-carousel-conainer {
+.carousel-container {
   width: 100%;
   text-align: center;
   border-style: solid;
@@ -76,7 +76,11 @@ carousel-conainer {
   border-color: maroon;
 }
 
-clickable-grid {
+.grid-item-no-padding {
+  padding: 0 !important;
+}
+
+.clickable-grid {
   align-content: center;
   border-style: solid;
   border-width: 0.25rem;
@@ -89,10 +93,22 @@ clickable-grid {
   }
 }
 
-newscards-container {
+.newscards-container {
   align-self: center;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   justify-content: center;
+}
+
+.newscard-item {
+  text-align: center;
+  align-content: center;
+  border-style: solid;
+  border-width: 0.05rem;
+  border-color: azure;
+}
+
+.filter-bar {
+  text-align: center;
 }

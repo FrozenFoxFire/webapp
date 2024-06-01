@@ -12,7 +12,7 @@ function App({ children, debug = false }: Props) {
   return (
     <Stack id="app-container">
       <Stack id="app-backdrop" direction="column" height="max-content">
-        <Header title={process?.env?.APP_TITLE || 'Missing Environment'} />
+        <Header title={process?.env?.REACT_APP_TITLE || 'Missing Environment'} />
         <News debug={debug} skip={false} />
         {children && (
           <Stack id="app-content" alignContent="center" minHeight="25rem">

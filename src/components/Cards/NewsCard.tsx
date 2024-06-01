@@ -12,16 +12,17 @@ function NewsCard({ card }: Props): JSX.Element {
       container
       item
       xs={2}
-      textAlign="center"
-      alignContent="center"
-      sx={{ borderStyle: 'solid', borderWidth: '0.05rem', borderColor: 'azure' }}
+      className='newscard-item'
     >
       <Grid container item spacing={2}>
-        <Grid item xs={12} sx={{ flexGrow: 1 }}>
-          <Typography>{card.name}</Typography>
+        <Grid item xs={12}>
+          <Typography>{card.title ?? 'Title Missing'}</Typography>
         </Grid>
-        <Grid item xs={12} sx={{ flexGrow: 1 }}>
-          <Typography>{card.description}</Typography>
+        <Grid item xs={12}>
+          <Typography>Author: {card.author ?? 'Author Unknown'}</Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography>{card.description ?? 'No Description'}</Typography>
         </Grid>
       </Grid>
     </Grid>

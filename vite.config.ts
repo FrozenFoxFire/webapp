@@ -8,7 +8,8 @@ export default defineConfig(({ mode }) => {
     define: {
       'process.env.NEWS_API_KEY': JSON.stringify(env.NEWS_API_KEY),
       'process.env.NEWS_API_HOST': JSON.stringify(env.NEWS_API_HOST),
-      'process.env.NEWS_API_URL': JSON.stringify(env.NEWS_API_URL)
+      'process.env.NEWS_API_URL': JSON.stringify(env.NEWS_API_URL),
+      'process.env.REACT_APP_TITLE': JSON.stringify(env.REACT_APP_TITLE)
     },
     plugins: [react()]
   };
