@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Grid, Stack } from '@mui/material';
-import Card from '../../components/models/Card.tsx';
-import Cards from '../../components/partition/Cards';
+import Card from '../models/Card.tsx';
+import Cards from '../partition/Cards.tsx';
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
-import SelectionSearchText from "../../components/Search/SelectionSearchText.tsx";
+import SelectionSearchText from "../search/SelectionSearchText.tsx";
 import {DisplayedComponents} from "../../utils/common.tsx";
 
 interface Props {

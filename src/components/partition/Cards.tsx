@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 import { Card as CardType } from '../models';
-import Card from '../Cards/Card';
+import Card from '../cards/Card';
 import {DisplayedComponents} from "../../utils/common.tsx";
 
 interface Props {

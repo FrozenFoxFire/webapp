@@ -1,9 +1,9 @@
+import CryptoCoin from '../models/CryptoCoinResult';
+import NewsArticle from '../models/NewsArticle';
+
 interface Card {
   id: string;
-  name?: string;
-  title: string;
-  description: string;
-  author?: string;
-  image: string;
+  crypto?: CryptoCoin;
+  news?: NewsArticle;
 }
 export default Card;

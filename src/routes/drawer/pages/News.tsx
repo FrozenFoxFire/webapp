@@ -1,18 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import Card from '../../components/models/Card.tsx';
-import fetchNews from '../../fetch/FetchNews.tsx';
-import NewsArticle from '../../components/models/NewsArticle.tsx';
-import {DisplayedComponents} from "../../utils/common.tsx";
-import CardCarousel from "./CardCarousel.tsx";
+import Card from '../../../components/models/Card.tsx';
+import fetchNews from '../../../fetch/FetchNews.tsx';
+import NewsArticle from '../../../components/models/NewsArticle.tsx';
+import {DisplayedComponents} from "../../../utils/common.tsx";
+import CardCarousel from "../../../components/cards/CardCarousel.tsx";
 
 const convertArticleToCard = (article: NewsArticle, index: number): Card => {
   return {
-    title: article.title ?? '',
-    name: article.source?.name ?? '',
-    description: article.description ?? '',
-    image: article.urlToImage ?? '',
-    author: article.author ?? '',
-    id: article.source?.id ?? index.toString()
+    id: article.source?.id ?? index.toString(),
+    news: article
   };
 };
 

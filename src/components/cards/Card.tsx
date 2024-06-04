@@ -1,3 +1,4 @@
+import React from 'react';
 import {Card as CardType} from "../models";
 import {DisplayedComponents} from "../../utils/common.tsx";
 import NewsCard from "./NewsCard.tsx";
@@ -8,7 +9,7 @@ interface Props {
   cardType: DisplayedComponents;
 }
 
-function Card({ card, cardType }: Props) {
+function Card({ card, cardType }: Props): JSX.Element {
   switch (cardType) {
     case DisplayedComponents.news:
       return <NewsCard card={card} />

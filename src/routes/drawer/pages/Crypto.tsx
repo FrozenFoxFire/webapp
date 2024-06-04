@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
-import fetchCoinList from "../../fetch/Crypto/FetchCoinList.tsx";
-import CryptoCoinResult from "../../components/models/CryptoCoinResult.tsx";
-import CardCarousel from "./CardCarousel.tsx";
-import {DisplayedComponents} from "../../utils/common.tsx";
-import {Card} from "../../components/models";
+import fetchCoinList from "../../../fetch/Crypto/FetchCoinList.tsx";
+import CryptoCoinResult from "../../../components/models/CryptoCoinResult.tsx";
+import CardCarousel from "../../../components/cards/CardCarousel.tsx";
+import {DisplayedComponents} from "../../../utils/common.tsx";
+import {Card} from "../../../components/models";
 
 interface Props {
   debug?: boolean;
@@ -15,7 +15,7 @@ function Crypto({ debug, skip }: Props) {
   const API_URL = process?.env?.CRYPTO_API_URL;
 
   const convertToCard = (result: CryptoCoinResult): Card => {
-    return { id: result?.id || 'unknown id', title: result?.name || 'Name not Found', description: 'Combine results for description', image: result?.image || '', };
+    return { id: result?.id || 'unknown id', crypto: result };
   }
 
   if (debug) {
