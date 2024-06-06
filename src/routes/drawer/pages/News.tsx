@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import Card from '../../../components/models/Card.tsx';
 import fetchNews from '../../../fetch/FetchNews.tsx';
 import NewsArticle from '../../../components/models/NewsArticle.tsx';
-import {DisplayedComponents} from "../../../utils/common.tsx";
 import CardCarousel from "../../../components/cards/CardCarousel.tsx";
+import {DisplayedComponents} from "../../../constants.tsx";
 
 const convertArticleToCard = (article: NewsArticle, index: number): Card => {
   return {
@@ -23,7 +23,7 @@ function News({ debug = false, skip = false }: Props) {
 
   if (debug) {
     console.log('News.tsx', { API_URL, articles });
-}
+  }
 
   useEffect(() => {
     if (!skip && !!API_URL) {

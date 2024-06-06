@@ -10,7 +10,9 @@ function App({ children, debug = false }: Props) {
   debug && console.log('App.tsx');
   return (
     <Stack id="app-container">
-      <AppDrawer children={children} />
+      <AppDrawer debug={true}>
+        {children}
+      </AppDrawer>
     </Stack>
   );
 }

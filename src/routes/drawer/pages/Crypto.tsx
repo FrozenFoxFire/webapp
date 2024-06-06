@@ -2,8 +2,8 @@ import React, {useEffect, useState} from "react";
 import fetchCoinList from "../../../fetch/Crypto/FetchCoinList.tsx";
 import CryptoCoinResult from "../../../components/models/CryptoCoinResult.tsx";
 import CardCarousel from "../../../components/cards/CardCarousel.tsx";
-import {DisplayedComponents} from "../../../utils/common.tsx";
 import {Card} from "../../../components/models";
+import {DisplayedComponents} from "../../../constants.tsx";
 
 interface Props {
   debug?: boolean;
