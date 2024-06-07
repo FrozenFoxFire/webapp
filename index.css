@@ -68,6 +68,19 @@ button:focus-visible {
 }
 
 /* Custom Classes */
+/* App Classes */
+.app-backdrop {
+  height: 100%;
+  margin: 2.75rem auto;
+}
+
+.app-header {
+  text-align: center;
+  align-content: start;
+  flex-direction: column;
+}
+
+/* Carousel Classes */
 .carousel-container {
   width: 100%;
   text-align: center;

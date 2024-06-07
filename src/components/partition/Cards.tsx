@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from '@mui/material';
+import {Grid, Typography} from '@mui/material';
 import { Card as CardType } from '../models';
 import Card from '../cards/Card';
 
@@ -18,6 +18,7 @@ function Cards({ cards, cardType, debug = false }: Props): JSX.Element {
 
   return (
     <Grid id="news-cards-container" className="newscards-container" container item xs={12} direction="row">
+      {cards.length === 0 && <Typography>Nothing to display...</Typography>}
       {cards.map((card, index) => (
         <Card key={`${card.id}-${index}`} card={card} cardType={cardType} />
       ))}

@@ -18,7 +18,7 @@ function Header({ title, selectionChanged }: Props) {
   }
 
   return (
-    <Box id="app-header" textAlign="center" alignContent="start" minHeight="5rem" flexDirection='column'>
+    <Box id="app-header" >
       <Typography id="app-title">{title}</Typography>
       <Stack display="flex" flexDirection='row' justifyContent="center" >
         {DisplayComponentKeys.map((componentType, index) => {

@@ -24,14 +24,14 @@ function AppDrawer({ children, debug = false }: Props) {
   }
 
   return (
-    <Stack id="app-backdrop" direction="column" height="max-content" margin='2.75rem'>
+    <Stack id="app-backdrop" direction="column" >
       <Header title={process?.env?.REACT_APP_TITLE || 'Navigation'} selectionChanged={setSelectedTab} />
       {selectedTab === DisplayedComponents.news && <News debug={debug} skip={false}/>}
       {selectedTab === DisplayedComponents.crypto && <Crypto debug={debug} skip={false}/>}
       {selectedTab === DisplayedComponents.stocks && <Stocks debug={debug} skip={true}/>}
       {selectedTab === DisplayedComponents.security && <Security debug={debug} skip={true} />}
       {children && (
-        <Stack id="app-content" alignContent="center" minHeight="25rem">
+        <Stack id="app-content" alignContent="center">
           {children}
         </Stack>
       )}
