@@ -11,6 +11,7 @@ export default defineConfig(({ mode }) => {
       'process.env.NEWS_API_URL': JSON.stringify(env.NEWS_API_URL),
       'process.env.REACT_APP_TITLE': JSON.stringify(env.REACT_APP_TITLE),
       'process.env.CRYPTO_API_URL': JSON.stringify(env.CRYPTO_API_URL),
+      'process.env.REACT_APP_GRAPHQL_API_PORT': JSON.stringify(env.REACT_APP_GRAPHQL_API_PORT),
     },
     plugins: [react()]
   };
