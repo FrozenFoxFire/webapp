@@ -1,7 +1,7 @@
 import React from 'react';
-import {DataGrid} from "@mui/x-data-grid";
+import { DataGrid, gridClasses } from "@mui/x-data-grid";
 import Card from "../models/Card.tsx";
-import {Box, Stack} from "@mui/material";
+import { Box, Stack } from "@mui/material";
 
 const TABLE_HEADER = [
   { field: 'id', headerName: 'ID', hideable: true },
@@ -35,6 +35,18 @@ function CryptoTable({ cards=[], debug }: Props) {
                       atlp: card.crypto?.atl_change_percentage,
                       atld: card.crypto?.atl_date ? new Date(card.crypto.atl_date) : card.crypto?.atl_date,
                   }))}
+                // TODO: Fix sticky header for v7 of DataGrid
+                sx={(theme) => ({
+                  [`.${gridClasses.main}`]: {
+                    overflow: "unset"
+                  },
+                  [`.${gridClasses["container--top"]}`]: {
+                    // position: "sticky",
+                    // top: 0,
+                    backgroundColor: theme.palette.background.paper,
+                    zIndex: -1
+                  }
+                })}
                 initialState={{ columns: { columnVisibilityModel: { id: false }}}}
                 pagination
                 />

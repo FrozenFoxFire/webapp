@@ -25,6 +25,7 @@ function CardCarousel({ cards, cardType, debug = false }: Props) {
     console.log('Card Carousel', { API_URL, paginationSize, paginationNumber, maxPageNumber, selectedCards });
   }
 
+  // TODO: Add Sorting/Filtering
   // const updatePagination = (newPaginationSize: number = 10) => {
   //   if (newPaginationSize === paginationSize) {
   //     return;
@@ -45,6 +46,8 @@ function CardCarousel({ cards, cardType, debug = false }: Props) {
     setPaginationNumber(newPageNumber);
   };
 
+  // TODO: Add Better Padding
+  // TODO: Update Card layouts
   return (
     <Stack id="card-carousel-content" textAlign="center" alignContent="center">
       <Grid id='card-carousel-content-container' className='grid-item-no-padding'

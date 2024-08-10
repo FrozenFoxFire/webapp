@@ -35,7 +35,7 @@ function AppDrawer({ children, debug = false }: Props) {
           {children}
         </Stack>
       )}
-      <Footer text='Footer Placeholder Text' />
+      <Footer />
     </Stack>)
 }
 export default AppDrawer;
