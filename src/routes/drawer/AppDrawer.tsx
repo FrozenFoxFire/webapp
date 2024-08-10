@@ -1,22 +1,24 @@
 import React, {PropsWithChildren, useState} from 'react';
-import Header from "./pages/Header.tsx";
-import News from "./pages/News.tsx";
-import Crypto from "./pages/Crypto.tsx";
-import Security from "./pages/Security.tsx";
-import { Stack } from "@mui/material";
-import Footer from "./pages/Footer.tsx";
-import Stocks from "./pages/Stocks.tsx";
-import {DisplayedComponents} from "../../constants.tsx";
+import { Grid } from '@mui/material';
+import Header from './pages/Header.tsx';
+import News from './pages/News.tsx';
+import Crypto from './pages/Crypto.tsx';
+import Security from './pages/Security.tsx';
+import Footer from './pages/Footer.tsx';
+import Stocks from './pages/Stocks.tsx';
+import AboutMe from './pages/AboutMe.tsx';
+import {DisplayedComponents} from '../../constants.tsx';
 
 interface Props extends PropsWithChildren {
   debug?: boolean;
 }
 
 function AppDrawer({ children, debug = false }: Props) {
-  const [selectedTab, setSelectedTab] = useState<DisplayedComponents>(DisplayedComponents.crypto);
+  const [selectedTab, setSelectedTab] = useState<DisplayedComponents>(DisplayedComponents.aboutMe);
   if (debug) {
     console.log('AppDrawer: ', {
       selectedTab,
+      isAboutMe: selectedTab === DisplayedComponents.aboutMe,
       isNews: selectedTab === DisplayedComponents.news,
       isCrypto: selectedTab === DisplayedComponents.crypto,
       isStocks: selectedTab === DisplayedComponents.stocks,
@@ -24,18 +26,19 @@ function AppDrawer({ children, debug = false }: Props) {
   }
 
   return (
-    <Stack id="app-backdrop" direction="column" >
+    <Grid id="app-backdrop" direction="row" height='100%' >
       <Header title={process?.env?.REACT_APP_TITLE || 'Navigation'} selectionChanged={setSelectedTab} />
+      {selectedTab === DisplayedComponents.aboutMe && <AboutMe debug={debug} skip={true}/>}
       {selectedTab === DisplayedComponents.news && <News debug={debug} skip={false}/>}
       {selectedTab === DisplayedComponents.crypto && <Crypto debug={debug} skip={false}/>}
       {selectedTab === DisplayedComponents.stocks && <Stocks debug={debug} skip={true}/>}
       {selectedTab === DisplayedComponents.security && <Security debug={debug} skip={true} />}
       {children && (
-        <Stack id="app-content" alignContent="center">
+        <Grid height='80vh' id="app-content" alignContent="center">
           {children}
-        </Stack>
+        </Grid>
       )}
       <Footer />
-    </Stack>)
+    </Grid>)
 }
 export default AppDrawer;

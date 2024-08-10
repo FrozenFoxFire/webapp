@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Link, Stack, Typography } from '@mui/material';
+import { Grid, Link, Stack, Typography } from '@mui/material';
 
 interface Props {
   text?: string;
@@ -7,7 +7,7 @@ interface Props {
 
 function Footer({ text }: Props) {
 return (
-    <Box id='app-footer' textAlign='center' alignContent='center' minHeight='5rem'>
+    <Grid id='app-footer' textAlign='center' minHeight='5rem' flexGrow={0} flexShrink={0}>
       <Stack alignItems='center'>
         {text && <Typography id='footer-text'>{text}</Typography>}
         <Grid display='flex' flexDirection='row' justifyContent='start'>
@@ -21,7 +21,7 @@ return (
           <Typography>.</Typography>
         </Grid>
       </Stack>
-    </Box>
+    </Grid>
   );
 }
 export default Footer;

@@ -1,7 +1,7 @@
-import {Box, Stack, Typography} from '@mui/material';
+import { Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
-import {DisplayComponentKeys, DisplayedComponents} from "../../../constants.tsx";
-import HeaderCard from "../../../components/cards/HeaderCard";
+import {DisplayComponentKeys, DisplayedComponents} from '../../../constants.tsx';
+import HeaderCard from '../../../components/cards/HeaderCard';
 
 interface Props {
   title: string;
@@ -18,7 +18,7 @@ function Header({ title, selectionChanged }: Props) {
   }
 
   return (
-    <Box id='app-header'>
+    <Grid id='app-header' >
       <Typography id="app-title">{title}</Typography>
       <Stack display="flex" flexDirection='row' justifyContent="center" >
         {DisplayComponentKeys.map((componentType, index) => {
@@ -30,7 +30,7 @@ function Header({ title, selectionChanged }: Props) {
             updateSelection={updateSelection} />
         })}
       </Stack>
-    </Box>
+    </Grid>
   );
 }
 export default Header;
