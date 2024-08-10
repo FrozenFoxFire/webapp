@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from "react";
 import fetchCoinList from "../../../fetch/Crypto/FetchCoinList.tsx";
 import CryptoCoinResult from "../../../components/models/CryptoCoinResult.tsx";
-import CardCarousel from "../../../components/cards/CardCarousel.tsx";
 import {Card} from "../../../components/models";
-import {DisplayedComponents} from "../../../constants.tsx";
+import CryptoTable from "../../../components/Tables/CryptoTable.tsx";
 
 interface Props {
   debug?: boolean;
@@ -22,6 +21,7 @@ function Crypto({ debug, skip }: Props) {
     console.log('Crypto', { coinList, API_URL });
   }
 
+  // Determine logic to extrapolate out of useEffect
   useEffect(() => {
     if (!skip && !!API_URL) {
       fetchCoinList({ currency: 'USD', url: API_URL, debug: debug }).then((fetchCoinListResult) => {
@@ -30,6 +30,6 @@ function Crypto({ debug, skip }: Props) {
     }
   }, [debug, skip]);
 
-  return <CardCarousel cardType={DisplayedComponents.crypto} cards={coinList} debug={debug} />
+  return <CryptoTable cards={coinList} debug={debug} />;
 }
 export default Crypto;

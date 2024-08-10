@@ -9,7 +9,7 @@ interface Props {
   cardType: DisplayedComponents;
 }
 
-function Card({ card, cardType }: Props): JSX.Element {
+function Card({ card, cardType }: Props) {
   switch (cardType) {
     case DisplayedComponents.news:
       return <NewsCard card={card} />

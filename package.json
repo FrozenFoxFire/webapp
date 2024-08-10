@@ -16,12 +16,13 @@
   },
   "dependencies": {
     "@apollo/client": "^3.10.4",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
     "@fontsource/roboto": "^5.0.13",
     "@mui/icons-material": "^5.15.15",
-    "@mui/material": "^5.15.15",
+    "@mui/material": "^5.16.7",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
+    "@mui/x-data-grid": "^7.12.1",
     "@react-buddy/ide-toolbox": "^2.4.0",
     "@react-buddy/palette-mui": "^5.0.1",
     "@types/jest": "^29.5.12",
@@ -39,7 +40,7 @@
     "react-router-dom": "^6.23.0",
     "react-scripts": "^5.0.1",
     "sort-by": "^1.2.0",
-    "styled-components": "^6.1.8"
+    "styled-components": "^6.1.12"
   },
   "devDependencies": {
     "@eslint/compat": "^1.0.3",
@@ -64,5 +65,9 @@
   "resolutions": {
     "//": "See https://github.com/facebook/create-react-app/issues/11773",
     "react-error-overlay": "6.0.9"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
   }
 }

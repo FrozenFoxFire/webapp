@@ -25,7 +25,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  place-items: start;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -77,6 +77,7 @@ button:focus-visible {
 .app-header {
   text-align: center;
   align-content: start;
+  justify-content: start;
   flex-direction: column;
 }
 
@@ -116,7 +117,7 @@ button:focus-visible {
 
 .newscard-item {
   text-align: center;
-  align-content: start;
+  align-content: center;
   border-style: solid;
   border-color: azure;
   border-width: 0.05rem;
@@ -137,10 +138,15 @@ button:focus-visible {
 
 .newscard-description {
   font-size: 1rem !important;
-  width: 100%;
+  width: fit-content;
 }
 
 .filter-bar {
   text-align: center;
   justify-content: center;
+}
+
+/* Override for default font on DataGrid */
+.MuiDataGrid-cell {
+  color: white;
 }
