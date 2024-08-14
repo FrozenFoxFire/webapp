@@ -6,9 +6,9 @@ interface Props {
   skip?: boolean;
 }
 
-function AboutMe({ debug, skip }: Props) {
+function AboutTheAuthor({ debug, skip }: Props) {
   if (debug) {
-    console.log('AboutMe', { skip });
+    console.log('AboutTheAuthor', { skip });
   }
 
   return <Box width='100%' height='100%'>
@@ -23,4 +23,4 @@ function AboutMe({ debug, skip }: Props) {
     </Stack>
   </Box>;
 }
-export default AboutMe;
+export default AboutTheAuthor;

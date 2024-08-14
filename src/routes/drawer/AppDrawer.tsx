@@ -6,7 +6,7 @@ import Crypto from './pages/Crypto.tsx';
 import Security from './pages/Security.tsx';
 import Footer from './pages/Footer.tsx';
 import Stocks from './pages/Stocks.tsx';
-import AboutMe from './pages/AboutMe.tsx';
+import AboutTheAuthor from './pages/AboutTheAuthor.tsx';
 import {DisplayedComponents} from '../../constants.tsx';
 
 interface Props extends PropsWithChildren {
@@ -14,11 +14,11 @@ interface Props extends PropsWithChildren {
 }
 
 function AppDrawer({ children, debug = false }: Props) {
-  const [selectedTab, setSelectedTab] = useState<DisplayedComponents>(DisplayedComponents.aboutMe);
+  const [selectedTab, setSelectedTab] = useState<DisplayedComponents>(DisplayedComponents.aboutTheAuthor);
   if (debug) {
     console.log('AppDrawer: ', {
       selectedTab,
-      isAboutMe: selectedTab === DisplayedComponents.aboutMe,
+      aboutTheOther: selectedTab === DisplayedComponents.aboutTheAuthor,
       isNews: selectedTab === DisplayedComponents.news,
       isCrypto: selectedTab === DisplayedComponents.crypto,
       isStocks: selectedTab === DisplayedComponents.stocks,
@@ -28,7 +28,7 @@ function AppDrawer({ children, debug = false }: Props) {
   return (
     <Grid id="app-backdrop" direction="row" height='100%' >
       <Header title={process?.env?.REACT_APP_TITLE || 'Navigation'} selectionChanged={setSelectedTab} />
-      {selectedTab === DisplayedComponents.aboutMe && <AboutMe debug={debug} skip={true}/>}
+      {selectedTab === DisplayedComponents.aboutTheAuthor && <AboutTheAuthor debug={debug} skip={true}/>}
       {selectedTab === DisplayedComponents.news && <News debug={debug} skip={false}/>}
       {selectedTab === DisplayedComponents.crypto && <Crypto debug={debug} skip={false}/>}
       {selectedTab === DisplayedComponents.stocks && <Stocks debug={debug} skip={true}/>}

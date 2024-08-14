@@ -2,7 +2,7 @@ import {isNumeric} from "./utils/common.tsx";
 
 export enum DisplayedComponents {
   none,
-  aboutMe,
+  aboutTheAuthor,
   crypto,
   news,
   security,
