@@ -1,5 +1,5 @@
 import axios from 'axios';
-import CryptoCoinResult from "../../components/models/CryptoCoinResult.tsx";
+import CryptoCoinResult from "../../components/models/fetchResults/CryptoCoinResult.tsx";
 
 interface Props {
   url: string;

@@ -1,4 +1,4 @@
-import CryptoCoin from '../models/CryptoCoinResult';
+import CryptoCoin from './fetchResults/CryptoCoinResult.tsx';
 import NewsArticle from '../models/NewsArticle';
 
 interface Card {

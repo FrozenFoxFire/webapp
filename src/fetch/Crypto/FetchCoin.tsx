@@ -11,7 +11,7 @@ const fetchCoin = async ({ id, url, debug = false }: Props): Promise<unknown> =>
   .get(`${url}/${id}`)
   .then((response) => {
     if (debug) {
-      console.log({response});
+      console.log({ response });
     }
     return response.data;
   })

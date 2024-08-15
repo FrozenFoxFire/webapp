@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import fetchCoinList from "../../../fetch/Crypto/FetchCoinList.tsx";
-import CryptoCoinResult from "../../../components/models/CryptoCoinResult.tsx";
+import CryptoCoinResult from "../../../components/models/fetchResults/CryptoCoinResult.tsx";
 import {Card} from "../../../components/models";
 import CryptoTable from "../../../components/Tables/CryptoTable.tsx";
 

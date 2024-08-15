@@ -1,5 +1,5 @@
 import Card from './Card';
-import CryptoCoinResult from './CryptoCoinResult';
+import CryptoCoinResult from './fetchResults/CryptoCoinResult.tsx';
 import NewsArticle from './NewsArticle';
 import NewsResult from "./NewsResult";
 import User from './User';
