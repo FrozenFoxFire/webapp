@@ -1,7 +1,7 @@
 import React from 'react';
-import { DataGrid, gridClasses } from "@mui/x-data-grid";
-import Card from "../models/Card.tsx";
-import { Box, Stack } from "@mui/material";
+import { DataGrid, gridClasses } from '@mui/x-data-grid';
+import Card from '../models/Card.tsx';
+import { Box, Stack } from '@mui/material';
 
 const TABLE_HEADER = [
   { field: 'id', headerName: 'ID', hideable: true },

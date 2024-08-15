@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {NewsArticle} from "../components/models";
+import { NewsArticle } from '../components/models/NewsArticle';
 
 interface Props {
   url: string;

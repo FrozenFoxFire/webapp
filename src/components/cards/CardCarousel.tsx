@@ -3,9 +3,8 @@ import { Grid, Stack } from '@mui/material';
 import Card from '../models/Card.tsx';
 import Cards from '../partition/Cards.tsx';
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
-import SelectionSearchText from "../search/SelectionSearchText.tsx";
-
-import {DisplayedComponents} from "../../constants.tsx";
+import SelectionSearchText from '../search/SelectionSearchText.tsx';
+import { DisplayedComponents } from '../../constants.tsx';
 
 interface Props {
   cards: Card[];

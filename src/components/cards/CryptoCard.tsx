@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from '../models';
 import {Box, Grid, Stack, Typography} from '@mui/material';
-import CardTextSmall from "./CardTextSmall.tsx";
+import CardTextSmall from './CardTextSmall.tsx';
 
 interface Props {
   card: Card;

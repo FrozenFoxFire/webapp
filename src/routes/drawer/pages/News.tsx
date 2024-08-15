@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from '../../../components/models/Card.tsx';
 import fetchNews from '../../../fetch/FetchNews.tsx';
 import NewsArticle from '../../../components/models/NewsArticle.tsx';
-import CardCarousel from "../../../components/cards/CardCarousel.tsx";
-import {DisplayedComponents} from "../../../constants.tsx";
+import CardCarousel from '../../../components/cards/CardCarousel.tsx';
+import {DisplayedComponents} from '../../../constants.tsx';
 
 const convertArticleToCard = (article: NewsArticle, index: number): Card => {
   return {

@@ -1,4 +1,4 @@
-import {DisplayedComponents} from "../constants.tsx";
+import { DisplayedComponents } from '../constants.tsx';
 
 type StringToDisplayComponentResult = DisplayedComponents;
 export const stringToDisplayComponent = (convertingStr: string): StringToDisplayComponentResult => {

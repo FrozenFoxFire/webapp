@@ -6,7 +6,7 @@ interface Props {
 
 function Video({ debug = false }: Props) {
   if (debug) {
-    console.log('Image: ',  { debug })
+    console.log('Video: ',  { debug })
   }
 
   return <div>Video</div>

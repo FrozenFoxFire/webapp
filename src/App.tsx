@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import { Stack } from '@mui/material';
-import AppDrawer from "./routes/drawer/AppDrawer";
-import GraphQL from "./routes/backend/GraphQL.tsx";
+import AppDrawer from './routes/drawer/AppDrawer';
+import GraphQL from './routes/backend/GraphQL';
 
 interface Props extends PropsWithChildren {
   debug?: boolean;

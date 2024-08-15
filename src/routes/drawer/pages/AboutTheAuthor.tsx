@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Stack, Typography} from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 
 interface Props {
   debug?: boolean;

@@ -1,6 +1,6 @@
 import React from 'react';
-import {Grid, Typography} from '@mui/material';
-import { Card as CardType } from '../models';
+import { Grid, Typography } from '@mui/material';
+import CardType from '../models/Card';
 import Card from '../cards/Card';
 
 import {DisplayedComponents} from "../../constants.tsx";

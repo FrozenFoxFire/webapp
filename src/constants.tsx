@@ -1,4 +1,4 @@
-import {isNumeric} from "./utils/common.tsx";
+import { isNumeric } from './utils/common.tsx';
 
 export enum DisplayedComponents {
   none,

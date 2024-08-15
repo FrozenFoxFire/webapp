@@ -1,6 +1,6 @@
 import { Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
-import {DisplayComponentKeys, DisplayedComponents} from '../../../constants.tsx';
+import { DisplayComponentKeys, DisplayedComponents } from '../../../constants.tsx';
 import HeaderCard from '../../../components/cards/HeaderCard';
 
 interface Props {

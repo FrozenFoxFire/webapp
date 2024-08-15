@@ -1,6 +1,7 @@
 import React from 'react';
-import {Stack} from "@mui/material";
-import { Image, Video } from '../../../components/Camera';
+import { Stack } from '@mui/material';
+import Image from '../../../components/Camera/Image.tsx';
+import Video from '../../../components/Camera/Video.tsx';
 
 interface Props {
   debug?: boolean;

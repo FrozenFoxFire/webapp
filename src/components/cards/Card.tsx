@@ -1,8 +1,8 @@
 import React from 'react';
-import {Card as CardType} from "../models";
-import NewsCard from "./NewsCard.tsx";
-import CryptoCard from "./CryptoCard.tsx";
-import {DisplayedComponents} from "../../constants.tsx";
+import { Card as CardType } from '../models';
+import NewsCard from './NewsCard.tsx';
+import CryptoCard from './CryptoCard.tsx';
+import { DisplayedComponents } from '../../constants.tsx';
 
 interface Props {
   card: CardType;

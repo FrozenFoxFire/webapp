@@ -1,7 +1,7 @@
 import React, {PropsWithChildren} from 'react';
-import HeaderButton from "../button/HeaderButton.tsx";
-import { DisplayedComponents } from "../../constants.tsx";
-import { stringToDisplayComponent } from "../../utils/common.tsx";
+import HeaderButton from '../button/HeaderButton.tsx';
+import { DisplayedComponents } from '../../constants.tsx';
+import { stringToDisplayComponent } from '../../utils/common.tsx';
 
 interface Props extends PropsWithChildren {
   type: string;

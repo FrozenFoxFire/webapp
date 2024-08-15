@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card } from '../models';
-import {Box, Grid, Stack, Typography} from '@mui/material';
+import Card from '../models/Card';
+import { Box, Grid, Stack, Typography } from '@mui/material';
 
 interface Props {
   card: Card;
