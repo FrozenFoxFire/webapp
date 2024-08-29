@@ -27,7 +27,7 @@ function News({ debug = false, skip = false }: Props) {
 
   useEffect(() => {
     if (!skip && !!API_URL) {
-      fetchNews({ from: '04/31/24', url: API_URL, sortBy: 'publishedAt', term: 'Trump' }).then((fetchNewsResult) => {
+      fetchNews({ from: '04/31/24', url: API_URL, sortBy: 'publishedAt', term: 'Election' }).then((fetchNewsResult) => {
           setArticles(fetchNewsResult.map((article, index) => convertArticleToCard(article, index)));
 
         if (debug) {
