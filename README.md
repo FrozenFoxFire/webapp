@@ -1,4 +1,14 @@
-# React + TypeScript + Vite
+# Usage
+1) React
+   - Intent to continue to use latest React version after enough support with current libraries are updated.
+2) Typescript/Javascript
+3) GraphQL
+   - Intent to use GraphQL for all API Requests (BE controlled)
+   - To be used with react-webapp-server
+
+
+# Technology Description
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
