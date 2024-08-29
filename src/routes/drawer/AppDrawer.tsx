@@ -1,13 +1,13 @@
 import React, {PropsWithChildren, useState} from 'react';
 import { Grid } from '@mui/material';
-import Header from './pages/Header.tsx';
-import News from './pages/News.tsx';
-import Crypto from './pages/Crypto.tsx';
-import Security from './pages/Security.tsx';
-import Footer from './pages/Footer.tsx';
-import Stocks from './pages/Stocks.tsx';
-import AboutTheAuthor from './pages/AboutTheAuthor.tsx';
-import {DisplayedComponents} from '../../constants.tsx';
+import Header from './pages/Header';
+import News from './pages/News';
+import Crypto from './pages/Crypto';
+import Security from './pages/Security';
+import Footer from './pages/Footer';
+import Stocks from './pages/Stocks';
+import AboutTheAuthor from './pages/AboutTheAuthor/AboutTheAuthor';
+import {DisplayedComponents} from '../../constants';
 
 interface Props extends PropsWithChildren {
   debug?: boolean;
