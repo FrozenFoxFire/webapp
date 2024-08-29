@@ -1,5 +1,3 @@
-import { isNumeric } from './utils/common.tsx';
-
 export enum DisplayedComponents {
   none,
   aboutTheAuthor,
@@ -8,8 +6,13 @@ export enum DisplayedComponents {
   security,
   stocks
 }
-export const DisplayComponentKeys = Object.keys(DisplayedComponents)
-  .filter(value => !isNumeric(value))
-  .filter(value => value !== 'none');
 
-console.log('Constants: ', { DisplayedComponents, DisplayComponentKeys, pureKeys: Object.keys(DisplayedComponents) })
+export const DisplayComponentNames = [
+  { type: DisplayedComponents.aboutTheAuthor, title: 'About the Author'},
+  { type: DisplayedComponents.crypto, title: 'Crypto'},
+  { type: DisplayedComponents.news, title: 'Related News'},
+  { type: DisplayedComponents.security, title: 'Security'},
+  { type: DisplayedComponents.stocks, title: 'Stocks'},
+]
+
+console.log('Constants: ', { DisplayedComponents, DisplayComponentNames, pureKeys: Object.keys(DisplayedComponents) })

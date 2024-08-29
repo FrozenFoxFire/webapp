@@ -1,22 +1,20 @@
 import React, {PropsWithChildren} from 'react';
-import HeaderButton from '../button/HeaderButton.tsx';
-import { DisplayedComponents } from '../../constants.tsx';
-import { stringToDisplayComponent } from '../../utils/common.tsx';
+import HeaderButton from '../button/HeaderButton';
+import { DisplayedComponents } from '../../constants';
 
 interface Props extends PropsWithChildren {
-  type: string;
+  title: string;
+  type: DisplayedComponents;
   updateSelection: (type: DisplayedComponents) => void;
   debug?: boolean;
   skip?: boolean;
 }
 
-function HeaderCard({ type, updateSelection, debug = false, skip = false }: Props) {
-  const capitalCase = type.toString().charAt(0).toUpperCase() + type.toString().slice(1);
-  const displayType = stringToDisplayComponent(type);
+function HeaderCard({ title, type, updateSelection, debug = false, skip = false }: Props) {
   if (debug) {
-    console.log('HeaderCard: ', { type, updateSelection, skip, capitalCase, displayType });
+    console.log('HeaderCard: ', { title, updateSelection, skip });
   }
 
-  return <HeaderButton title={capitalCase} onClick={() => updateSelection(displayType)} />;
+  return <HeaderButton title={title} onClick={() => updateSelection(type)} />;
 }
 export default HeaderCard;
