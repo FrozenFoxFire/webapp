@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Grid, Stack, Typography } from '@mui/material';
 import SkillList from "./SkillList.tsx";
+import PartitionDivider from "../../../../components/partition/Divider.tsx";
 
 interface Props {
   debug?: boolean;
@@ -22,6 +23,7 @@ function AboutTheAuthor({ debug, skip }: Props) {
           My other hobbies include figuring out how devices work, sometimes taking them apart.
           Outside of coding, I enjoy video games and exploring the world.
         </Typography>
+        <PartitionDivider />
         <Typography variant='h2'>Software Developer</Typography>
         <Typography border='dashed 0.125rem red'>
           <Typography variant='h5'>Caxy Interactive</Typography>
@@ -44,6 +46,7 @@ function AboutTheAuthor({ debug, skip }: Props) {
               ]} />
             </Grid>
           </Grid>
+          <PartitionDivider />
           <Typography variant='h5'>Regal Rexnord</Typography>
           <Grid container direction='row' xs={12}>
             <Grid container item xs={2}>
@@ -66,6 +69,7 @@ function AboutTheAuthor({ debug, skip }: Props) {
               ]} />
             </Grid>
           </Grid>
+          <PartitionDivider />
           <Typography variant='h5'>UICO, LLC</Typography>
           <Grid container direction='row' xs={12}>
             <Grid container item xs={2}>
