@@ -14,16 +14,16 @@ function AboutTheAuthor({ debug, skip }: Props) {
 
   return <Box width='100%' height='100%'>
     <Stack>
-      <Box textAlign='center' sx={{ borderStyle: 'solid' }}>
+      <Box textAlign='center' border='solid'>
         <Typography variant='h4'>About Me</Typography>
         <Typography variant='h6'>Michael Peschke</Typography>
-        <Typography textAlign='left' sx={{ marginLeft: '1rem' }}>
+        <Typography textAlign='left' marginLeft='1rem'>
           I enjoy coding and creating software to help my everyday life.
           My other hobbies include figuring out how devices work, sometimes taking them apart.
           Outside of coding, I enjoy video games and exploring the world.
         </Typography>
         <Typography variant='h2'>Software Developer</Typography>
-        <Typography sx={{ borderStyle: 'dashed', borderWidth: '0.125rem' }}>
+        <Typography border='dashed 0.125rem red'>
           <Typography variant='h5'>Caxy Interactive</Typography>
           <Grid container direction='row' xs={12}>
             <Grid container item xs={2}>
@@ -71,28 +71,56 @@ function AboutTheAuthor({ debug, skip }: Props) {
             <Grid container item xs={2}>
               <SkillList title='Skills' skills={['C# and C++', 'Assembly', 'Python', 'MatLab', 'Perl']} />
             </Grid>
-            <Grid container item xs={6}>
+            <Grid container item xs={5}>
               <SkillList title='Responsibilities' skills={[
                 'Develop desktop software application for internal, demonstration, and Quality Assurance',
                 'Work with team to determine software needs based on firmware development',
-                'Integrate firmware protocols with software',
-                'Assist in developing algorithms in older firmware in Assembly',
+                'Integrate firmware protocols with desktop software',
+                'Assist in updating older firmware in Assembly',
                 'Create drivers in Android, Windows, and Linux to provide touch interfaces'
+              ]} />
+            </Grid>
+            <Grid container item xs={5}>
+              <SkillList title='Achievements' skills={[
+                'Created and developed .NET Desktop Application with multiple build modes',
+                'Assisted in algorithm development for coordinate system',
+                'Assist in development of automation testing for touchscreens utilizing robotic process'
               ]} />
             </Grid>
           </Grid>
         </Typography>
         <Typography variant='h2'>Hardware Developer</Typography>
-        <Typography sx={{ borderStyle: 'dashed', borderWidth: '0.125rem' }}>
+        <Typography border='dashed 0.125rem white'>
           <Typography>Regal Rexnord</Typography>
-          <Typography>UICO, LLC</Typography>
+          <Grid container direction='row' xs={12}>
+            <Grid container item xs={2}>
+              <SkillList title='Skills and Tools' skills={[
+                'AutoCAD, FreeCAD, and LibreCAD',
+                'Documentation',
+                'Layout Design',
+                'IP56 and IP68 Research and Design'
+              ]} />
+            </Grid>
+            <Grid container item xs={5}>
+              <SkillList title='Responsibilities' skills={[
+                'Design PCB with multiple chipsets',
+                'Validate hardware designs for internal noise feedback',
+                'Ensure low-cost needs',
+                'Approve contractor designs'
+              ]} />
+            </Grid>
+            <Grid container item xs={5}>
+              <SkillList title='Achievements' skills={[
+                'Developed iterations of PCB',
+                'Developed 3D printed housing'
+              ]} />
+            </Grid>
+          </Grid>
         </Typography>
-        <Typography variant='h2'>IoT Developer</Typography>
-        <Typography sx={{ borderStyle: 'dashed', borderWidth: '0.125rem' }}>
+        <Typography variant='h2'>IoT Design Engineer</Typography>
+        <Typography border='dashed 0.125rem blue' sx={{ borderStyle: 'dashed', borderWidth: '0.125rem' }}>
           <Typography>Regal Rexnord</Typography>
-          <Typography>UICO, LLC</Typography>
         </Typography>
-        <Typography>micahel.d.peschke@gmail.com</Typography>
       </Box>
     </Stack>
   </Box>;

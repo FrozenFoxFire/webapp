@@ -18,7 +18,7 @@ function Header({ title, selectionChanged }: Props) {
   }
 
   return (
-    <Grid id='app-header' >
+    <Grid id='app-header' border='solid 0.125rem cyan'>
       <Typography id="app-title">{title}</Typography>
       <Stack display="flex" flexDirection='row' justifyContent="center" >
         {DisplayComponentNames.map((componentType, index) => {

@@ -7,10 +7,15 @@ interface SkillListProps {
 }
 
 function SkillList({ title, skills }: SkillListProps) {
+  const filteredSkills = skills.filter((x) => !!x);
+  if (filteredSkills.length < 1)  {
+    return null;
+  }
+
   // Skills should be unique
   return <List sx={{ textAlign: 'left', marginLeft: '1rem' }}>
     {title}
-    {skills.length > 0 && skills.map((skill) => <ListItem key={skill}>- {skill}</ListItem>)}
+    {filteredSkills.map((skill) => <ListItem key={skill}>- {skill}</ListItem>)}
   </List>;
 }
 
