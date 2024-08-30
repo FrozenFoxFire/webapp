@@ -7,20 +7,24 @@ interface Props {
 
 function Footer({ text }: Props) {
 return (
-    <Grid id='app-footer' textAlign='center' minHeight='5rem' flexGrow={0} flexShrink={0}>
-      <Stack alignItems='center'>
-        {text && <Typography id='footer-text'>{text}</Typography>}
-        <Grid display='flex' flexDirection='row' justifyContent='start'>
-          <Typography>Thank you for taking a look at&nbsp;</Typography>
-            <Link href='https://www.linkedin.com/in/michael-peschke/'>my</Link>
-          <Typography>&nbsp;sample project.</Typography>
+    <Grid container xs={12} id='app-footer' border='solid 0.125rem cyan'>
+      {text && <Typography id='footer-text'>{text}</Typography>}
+      <Grid container item display='flex' flexDirection='row' justifyContent='start'>
+        <Typography>Thank you for taking a look at&nbsp;</Typography>
+          <Link href='https://www.linkedin.com/in/michael-peschke/'>my</Link>
+        <Typography>&nbsp;sample project.</Typography>
+      </Grid>
+      <Grid container item display='flex' flexDirection='row' justifyContent='start'>
+        <Typography>You can find more of what I work on at my&nbsp;</Typography>
+          <Link href='https://github.com/FrozenFoxFire'>GitHub</Link>
+        <Typography>.</Typography>
+      </Grid>
+      <Grid container item xs={12} justifyContent='center'>
+        <Typography>Contact Information</Typography>
+        <Grid container item xs={12} justifyContent='center'>
+          <Typography>Email: michael.d.peschke@gmail.com</Typography>
         </Grid>
-        <Grid display='flex' flexDirection='row' justifyContent='start'>
-          <Typography>You can find more of what I work on at my&nbsp;</Typography>
-            <Link href='https://github.com/FrozenFoxFire'>GitHub</Link>
-          <Typography>.</Typography>
-        </Grid>
-      </Stack>
+      </Grid>
     </Grid>
   );
 }
