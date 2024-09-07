@@ -4,11 +4,13 @@ export enum DisplayedComponents {
   crypto,
   news,
   security,
-  stocks
+  stocks,
+  videos
 }
 
 export const DisplayComponentNames = [
   { type: DisplayedComponents.aboutTheAuthor, title: 'About the Author'},
+  { type: DisplayedComponents.videos, title: 'Video Search' },
   { type: DisplayedComponents.crypto, title: 'Crypto'},
   { type: DisplayedComponents.news, title: 'Related News'},
   { type: DisplayedComponents.security, title: 'Security'},

@@ -7,7 +7,8 @@ import Security from './pages/Security';
 import Footer from './pages/Footer';
 import Stocks from './pages/Stocks';
 import AboutTheAuthor from './pages/AboutTheAuthor/AboutTheAuthor';
-import {DisplayedComponents} from '../../constants';
+import VideoSearch from "./pages/VideoSearch.tsx";
+import { DisplayedComponents } from '../../constants';
 
 interface Props extends PropsWithChildren {
   debug?: boolean;
@@ -22,7 +23,9 @@ function AppDrawer({ children, debug = false }: Props) {
       isNews: selectedTab === DisplayedComponents.news,
       isCrypto: selectedTab === DisplayedComponents.crypto,
       isStocks: selectedTab === DisplayedComponents.stocks,
-      isSecurity: selectedTab === DisplayedComponents.security });
+      isSecurity: selectedTab === DisplayedComponents.security,
+      isVideos: selectedTab === DisplayedComponents.videos
+    });
   }
 
   return (
@@ -33,6 +36,7 @@ function AppDrawer({ children, debug = false }: Props) {
       {selectedTab === DisplayedComponents.crypto && <Crypto debug={debug} skip={false}/>}
       {selectedTab === DisplayedComponents.stocks && <Stocks debug={debug} skip={true}/>}
       {selectedTab === DisplayedComponents.security && <Security debug={debug} skip={true} />}
+      {selectedTab === DisplayedComponents.videos && <VideoSearch debug={debug} skip={true} />}
       {children && (
         <Grid height='80vh' id="app-content" alignContent="center">
           {children}
