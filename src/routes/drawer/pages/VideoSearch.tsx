@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Box, Grid } from '@mui/material';
-import youtubeSearch, { VideoSearchResult } from 'yt-search';
-import { YouTubePlayer } from 'react-youtube';
+import youtubeSearch, { SearchResult, VideoSearchResult } from 'yt-search';
+import YouTubePlayer from '../../../components/video/YouTube';
 import SelectionSearchText from '../../../components/search/SelectionSearchText';
+import YouTubeCards from '../../../components/cards/YouTubeCards.tsx';
+
+const DEFAULT_VIDEO_SEARCH = { all: [], videos: [], live: [], lists: [], accounts: [], channels: [], playlists: []};
 
 interface Props {
   debug?: boolean;
@@ -11,27 +14,12 @@ interface Props {
 
 function VideoSearch({ debug, skip }: Props) {
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchedVideos, setSearchedVideos] = useState<youtubeSearch.SearchResult>(
-    { all: [], videos: [], live: [], lists: [], accounts: [], channels: [], playlists: []});
+  const [searchedVideos, setSearchedVideos] = useState<SearchResult>(DEFAULT_VIDEO_SEARCH);
   const [selectedVideo, setSelectedVideo] = useState<VideoSearchResult | undefined>(undefined);
-
-  const youtubeOptions = {
-    height: '390',
-    width: '640',
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-    }
-  };
 
   const submit = () => {
     youtubeSearch(searchTerm)
       .then((videos) => setSearchedVideos(videos));
-  }
-
-  const selectionChanged = (selection: VideoSearchResult) => {
-    // TODO: Implement selection
-    setSelectedVideo(selection);
   }
 
   if (debug) {
@@ -42,7 +30,8 @@ function VideoSearch({ debug, skip }: Props) {
     <SelectionSearchText debug={debug} defaultText='Search Videos' searchTermChanged={setSearchTerm} onSubmit={submit} options={[]} />
     <Grid container item>
       <Grid>Videos</Grid>
-      {selectedVideo && <YouTubePlayer opts={youtubeOptions}/>}
+      {!!selectedVideo && <YouTubePlayer options={selectedVideo} />}
+      <YouTubeCards debug={debug} searchResult={searchedVideos} selectedVideo={setSelectedVideo} />
     </Grid>
   </Box>;
 }
