@@ -9,8 +9,9 @@ interface Props {
   searchTermChanged?: (term: string) => void;
 }
 
-function SelectionSearchText({ debug, defaultText = 'Search', onSubmit, searchTermChanged, options = [] }: Props) {
+function SelectionSearchText({ debug, defaultText = 'Search', searchTermChanged, options = [] }: Props) {
   const [searchText, setSearchText] = useState('');
+  const [previousSearches, setPreviousSearches] = useState(options);
   if (debug) {
     console.log('SearchBar', { defaultText, searchTermChanged, options });
   }
@@ -18,19 +19,18 @@ function SelectionSearchText({ debug, defaultText = 'Search', onSubmit, searchTe
   const searchTextChanged = (_event: SyntheticEvent<Element, Event>, value: string) => {
     setSearchText(value);
     searchTermChanged && searchTermChanged(value);
+    console.log('searchTextChanged', { value, _event });
+    // Wire-up to temporary list when we hit enter
+  };
 
-    // Question: Should we add submit button?
-    if (!!onSubmit && _event.nativeEvent.type === 'Enter') {
-      onSubmit();
-    }
-  }
-
-  return <Autocomplete
-    value={searchText}
-    onChange={(_event, value) => searchTextChanged(_event, value ?? '')}
-    options={options}
-    renderInput={(params) => <TextField {...params} label={defaultText} />}
-    sx={{ padding: '1rem' }}
-  />
+  return (
+    <Autocomplete
+      value={searchText}
+      onInputChange={(_event, value) => searchTextChanged(_event, value ?? '')}
+      options={options}
+      renderInput={(params) => <TextField {...params} label={defaultText} />}
+      sx={{ padding: '1rem' }}
+    />
+  );
 }
 export default SelectionSearchText;

@@ -90,15 +90,13 @@ button:focus-visible {
   border-color: maroon;
 }
 
-.grid-item-no-padding {
+.Grid2-item-no-padding {
   padding: 0 !important;
 }
 
-.clickable-grid {
+.clickable-Grid2 {
   align-content: center;
   border-style: solid;
-  border-width: 0.25rem;
-  border-color: aliceblue;
   :hover {
     cursor: pointer;
   }
@@ -146,7 +144,7 @@ button:focus-visible {
   justify-content: center;
 }
 
-/* Override for default font on DataGrid */
-.MuiDataGrid-cell {
+/* Override for default font on DataGrid2 */
+.MuiDataGrid2-cell {
   color: white;
 }

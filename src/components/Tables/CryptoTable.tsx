@@ -1,5 +1,5 @@
 import React from 'react';
-import { DataGrid, gridClasses } from '@mui/x-data-grid';
+import { DataGrid, gridClasses } from '@mui/x-data-Grid';
 import Card from '../models/Card.tsx';
 import { Box, Stack } from '@mui/material';
 
@@ -19,39 +19,42 @@ interface Props {
   debug?: boolean;
 }
 
-function CryptoTable({ cards=[], debug }: Props) {
+function CryptoTable({ cards = [], debug }: Props) {
   if (debug) {
     console.log('CryptoTable', { cards });
   }
 
-  return <Stack margin='2.5rem' height='40rem' overflow='scroll' >
-    <Box padding='1.5rem'>
-      <DataGrid columns={TABLE_HEADER}
-                rows={cards.map((card: Card) =>
-                  ({ id: card.crypto?.id,
-                      name: card.crypto?.name,
-                      price: card.crypto?.current_price,
-                      atl: card.crypto?.atl,
-                      atlp: card.crypto?.atl_change_percentage,
-                      atld: card.crypto?.atl_date ? new Date(card.crypto.atl_date) : card.crypto?.atl_date,
-                  }))}
-                // TODO: Fix sticky header for v7 of DataGrid
-                sx={(theme) => ({
-                  [`.${gridClasses.main}`]: {
-                    overflow: "unset"
-                  },
-                  [`.${gridClasses["container--top"]}`]: {
-                    // position: "sticky",
-                    // top: 0,
-                    backgroundColor: theme.palette.background.paper,
-                    zIndex: -1
-                  }
-                })}
-                initialState={{ columns: { columnVisibilityModel: { id: false }}}}
-                pagination
-                />
-    </Box>
-  </Stack>;
+  return (
+    <Stack margin="2.5rem" height="40rem" overflow="scroll">
+      <Box padding="1.5rem">
+        <DataGrid
+          columns={TABLE_HEADER}
+          rows={cards.map((card: Card) => ({
+            id: card.crypto?.id,
+            name: card.crypto?.name,
+            price: card.crypto?.current_price,
+            atl: card.crypto?.atl,
+            atlp: card.crypto?.atl_change_percentage,
+            atld: card.crypto?.atl_date ? new Date(card.crypto.atl_date) : card.crypto?.atl_date
+          }))}
+          // TODO: Fix sticky header for v7 of DataGrid
+          sx={(theme) => ({
+            [`.${gridClasses.main}`]: {
+              overflow: 'unset'
+            },
+            [`.${gridClasses['container--top']}`]: {
+              // position: "sticky",
+              // top: 0,
+              backgroundColor: theme.palette.background.paper,
+              zIndex: -1
+            }
+          })}
+          initialState={{ columns: { columnVisibilityModel: { id: false } } }}
+          pagination
+        />
+      </Box>
+    </Stack>
+  );
 }
 
 export default CryptoTable;

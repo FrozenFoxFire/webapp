@@ -1,5 +1,5 @@
-import { Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
+import { Grid2, Stack, Typography } from '@mui/material';
 import { DisplayComponentNames, DisplayedComponents } from '../../../constants';
 import HeaderCard from '../../../components/cards/HeaderCard';
 
@@ -15,23 +15,26 @@ function Header({ title, selectionChanged }: Props) {
     if (selectionChanged) {
       selectionChanged(newSelection);
     }
-  }
+  };
 
   return (
-    <Grid id='app-header' border='solid 0.125rem cyan'>
+    <Grid2 id="app-header" border="solid 0.125rem cyan">
       <Typography id="app-title">{title}</Typography>
-      <Stack display="flex" flexDirection='row' justifyContent="center" >
+      <Stack display="flex" flexDirection="row" justifyContent="center">
         {DisplayComponentNames.map((componentType, index) => {
-          return <HeaderCard
-            key={`header-${componentType}-${index}`}
-            debug={true}
-            skip={true}
-            type={componentType.type}
-            title={componentType.title}
-            updateSelection={updateSelection} />
+          return (
+            <HeaderCard
+              key={`header-${componentType}-${index}`}
+              debug={true}
+              skip={true}
+              type={componentType.type}
+              title={componentType.title}
+              updateSelection={updateSelection}
+            />
+          );
         })}
       </Stack>
-    </Grid>
+    </Grid2>
   );
 }
 export default Header;

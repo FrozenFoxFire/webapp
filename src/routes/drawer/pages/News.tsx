@@ -3,7 +3,7 @@ import Card from '../../../components/models/Card.tsx';
 import fetchNews from '../../../fetch/FetchNews.tsx';
 import NewsArticle from '../../../components/models/NewsArticle.tsx';
 import CardCarousel from '../../../components/cards/CardCarousel.tsx';
-import {DisplayedComponents} from '../../../constants.tsx';
+import { DisplayedComponents } from '../../../constants.tsx';
 
 const convertArticleToCard = (article: NewsArticle, index: number): Card => {
   return {
@@ -20,6 +20,7 @@ interface Props {
 function News({ debug = false, skip = false }: Props) {
   const [articles, setArticles] = useState<Card[]>([]);
   const API_URL = process?.env?.NEWS_API_URL;
+  const today = new Date();
 
   if (debug) {
     console.log('News.tsx', { API_URL, articles });
@@ -27,16 +28,18 @@ function News({ debug = false, skip = false }: Props) {
 
   useEffect(() => {
     if (!skip && !!API_URL) {
-      fetchNews({ from: '04/31/24', url: API_URL, sortBy: 'publishedAt', term: 'Election' }).then((fetchNewsResult) => {
+      fetchNews({ from: today.toDateString(), url: API_URL, sortBy: 'publishedAt', term: 'Politics' }).then(
+        (fetchNewsResult) => {
           setArticles(fetchNewsResult.map((article, index) => convertArticleToCard(article, index)));
 
-        if (debug) {
-          console.log({ fetchNewsResult });
+          if (debug) {
+            console.log({ fetchNewsResult });
+          }
         }
-      });
+      );
     }
   }, [debug, skip]);
 
-  return (<CardCarousel cardType={DisplayedComponents.news} cards={articles} debug={debug} />);
+  return <CardCarousel cardType={DisplayedComponents.news} cards={articles} debug={debug} />;
 }
 export default News;

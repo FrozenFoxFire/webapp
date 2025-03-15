@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Grid, Stack } from '@mui/material';
+import { Grid2, Stack } from '@mui/material';
 import Card from '../models/Card.tsx';
 import Cards from '../partition/Cards.tsx';
-import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 import SelectionSearchText from '../search/SelectionSearchText.tsx';
 import { DisplayedComponents } from '../../constants.tsx';
+import PageSelector from '../search/PageSelector.tsx';
 
 interface Props {
   cards: Card[];
@@ -16,8 +16,7 @@ function CardCarousel({ cards, cardType, debug = false }: Props) {
   const [paginationSize] = useState<number>(12);
   const [paginationNumber, setPaginationNumber] = useState(0);
   const maxPageNumber = Math.ceil(cards.length / paginationSize);
-  const selectedCards = cards
-    .slice(paginationNumber * paginationSize, (paginationNumber + 1) * paginationSize);
+  const selectedCards = cards.slice(paginationNumber * paginationSize, (paginationNumber + 1) * paginationSize);
 
   const API_URL = process?.env?.NEWS_API_URL;
   if (debug) {
@@ -48,42 +47,24 @@ function CardCarousel({ cards, cardType, debug = false }: Props) {
   // TODO: Add Better Padding
   // TODO: Update Card layouts
   return (
-    <Stack id="card-carousel-content" textAlign="center" alignContent="center">
-      <Grid id='card-carousel-content-container' className='grid-item-no-padding'
-            container item xs={12} textAlign='center' direction='column' spacing={5}>
-        <Grid id='card-carousel-filters-container' className='filter-bar' container item xs={12} spacing={2} direction='column'>
-          <SelectionSearchText debug={debug} title='Search your Tags' topics={[]} />
-        </Grid>
-        <Grid id="card-carousel-controller" container item direction="row" spacing={2}>
-          <Grid
-            id="carousel-left"
-            className="clickable-grid"
-            container
-            item
-            xs={2}
-            onClick={() => updatePage(paginationNumber - 1)}
-          >
-            <ChevronLeft sx={{ fontSize: '15rem' }} />
-          </Grid>
-          <Grid className='grid-item-no-padding' item xs={8} sx={{ padding: 0 }}>
-            <Cards
-              cards={selectedCards}
-              cardType={cardType}
-              debug={debug}
+    <Stack id="card-carousel-content" padding="1rem">
+      <Grid2 id="card-carousel-content-container" container direction="column">
+        <Grid2 id="card-carousel-filters-container" className="filter-bar" container spacing={2} direction="column">
+          <SelectionSearchText debug={debug} defaultText="Search your Tags" options={[]} />
+        </Grid2>
+        <Grid2 id="card-carousel-controller" container direction="row" spacing={2} padding="1.5rem">
+          <Grid2 className="Grid2-item-no-padding">
+            <Cards cards={selectedCards} cardType={cardType} debug={debug} />
+          </Grid2>
+          <Grid2 width="100%">
+            <PageSelector
+              pageCount={maxPageNumber}
+              selectedPage={paginationNumber}
+              updatePage={(increment) => updatePage(paginationNumber + increment)}
             />
-          </Grid>
-          <Grid
-            id="carousel-right"
-            className="clickable-grid"
-            container
-            item
-            xs={2}
-            onClick={() => updatePage(paginationNumber + 1)}
-          >
-            <ChevronRight sx={{ fontSize: '15rem' }} />
-          </Grid>
-        </Grid>
-      </Grid>
+          </Grid2>
+        </Grid2>
+      </Grid2>
     </Stack>
   );
 }

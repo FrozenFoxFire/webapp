@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Link, Typography } from '@mui/material';
+import { Grid2, Link, Typography } from '@mui/material';
 import { VideoSearchResult } from 'yt-search';
 
 interface Props {
@@ -8,18 +8,23 @@ interface Props {
 }
 
 function VideoCard({ debug, video }: Props) {
-
   if (debug) {
-    console.log('VideoCard', { video })
+    console.log('VideoCard', { video });
   }
 
   // TODO: Test and Update UI
   // Add hover auto-play selection
   // Add better buffering
-  return <Grid container item xs={4} height='10rem'>
-    {video?.title && <Typography variant='h3'>{video?.title}</Typography>}
-    {video?.url && <Link href={video.url} variant='h4'>Link to video</Link>}
-    {video?.description && <Typography variant='body1'>{video?.description}</Typography>}
-  </Grid>
+  return (
+    <Grid2 container size={{ xs: 4 }} height="10rem">
+      {video?.title && <Typography variant="h3">{video?.title}</Typography>}
+      {video?.url && (
+        <Link href={video.url} variant="h4">
+          Link to video
+        </Link>
+      )}
+      {video?.description && <Typography variant="body1">{video?.description}</Typography>}
+    </Grid2>
+  );
 }
 export default VideoCard;

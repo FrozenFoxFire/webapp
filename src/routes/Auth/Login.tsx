@@ -1,18 +1,18 @@
 import React from 'react';
-import { Box, FormControl, Grid, InputLabel } from '@mui/material';
+import { Box, FormControl, Grid2, InputLabel } from '@mui/material';
 
 function Login() {
   // User Context
   return (
     <FormControl>
-      <Grid xs={12} justifyContent="center">
+      <Grid2 size={{ xs: 12 }} justifyContent="center">
         <Box>
           <InputLabel id="login-username">User Name</InputLabel>
         </Box>
         <Box>
           <InputLabel id="login-password">Password</InputLabel>
         </Box>
-      </Grid>
+      </Grid2>
     </FormControl>
   );
 }

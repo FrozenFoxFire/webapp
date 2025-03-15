@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { NewsArticle } from '../components/models/NewsArticle';
+import NewsArticle from '../components/models/NewsArticle';
 
 interface Props {
   url: string;
@@ -15,7 +15,12 @@ const fetchNews = async ({ from, sortBy, term, url }: Props): Promise<NewsArticl
     .get(`${url}?q=${term}&from=${from}&sortBy=${sortBy}&apiKey=${API_KEY}`)
     .then((response) => {
       console.log({ response });
-      return response.data?.articles ?? [];
+      return (response.data?.articles as NewsArticle[])
+          .filter((article, index, articles) => {
+            return articles.findIndex((na: NewsArticle) => {
+              return na.title === article.title;
+            }) === index;
+          }) ?? [];
     })
     .catch((error) => {
       console.log(error);

@@ -1,5 +1,5 @@
-import React, {PropsWithChildren, useState} from 'react';
-import { Grid } from '@mui/material';
+import React, { PropsWithChildren, useState } from 'react';
+import { Grid2 } from '@mui/material';
 import Header from './pages/Header';
 import News from './pages/News';
 import Crypto from './pages/Crypto';
@@ -7,7 +7,7 @@ import Security from './pages/Security';
 import Footer from './pages/Footer';
 import Stocks from './pages/Stocks';
 import AboutTheAuthor from './pages/AboutTheAuthor/AboutTheAuthor';
-import VideoSearch from "./pages/VideoSearch.tsx";
+import VideoSearch from './pages/VideoSearch.tsx';
 import { DisplayedComponents } from '../../constants';
 
 interface Props extends PropsWithChildren {
@@ -29,20 +29,21 @@ function AppDrawer({ children, debug = false }: Props) {
   }
 
   return (
-    <Grid id="app-backdrop" direction="row" height='100%' >
+    <Grid2 id="app-backdrop" direction="row" height="100%">
       <Header title={process?.env?.REACT_APP_TITLE || 'Navigation'} selectionChanged={setSelectedTab} />
-      {selectedTab === DisplayedComponents.aboutTheAuthor && <AboutTheAuthor debug={debug} skip={true}/>}
-      {selectedTab === DisplayedComponents.news && <News debug={debug} skip={false}/>}
-      {selectedTab === DisplayedComponents.crypto && <Crypto debug={debug} skip={false}/>}
-      {selectedTab === DisplayedComponents.stocks && <Stocks debug={debug} skip={true}/>}
+      {selectedTab === DisplayedComponents.aboutTheAuthor && <AboutTheAuthor debug={debug} skip={true} />}
+      {selectedTab === DisplayedComponents.news && <News debug={debug} skip={false} />}
+      {selectedTab === DisplayedComponents.crypto && <Crypto debug={debug} skip={false} />}
+      {selectedTab === DisplayedComponents.stocks && <Stocks debug={debug} skip={true} />}
       {selectedTab === DisplayedComponents.security && <Security debug={debug} skip={true} />}
       {selectedTab === DisplayedComponents.videos && <VideoSearch debug={debug} skip={true} />}
       {children && (
-        <Grid height='80vh' id="app-content" alignContent="center">
+        <Grid2 height="80vh" id="app-content" alignContent="center">
           {children}
-        </Grid>
+        </Grid2>
       )}
       <Footer />
-    </Grid>)
+    </Grid2>
+  );
 }
 export default AppDrawer;

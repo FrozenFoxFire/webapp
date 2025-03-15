@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Box, Grid } from '@mui/material';
+import { Box, Grid2 } from '@mui/material';
 import youtubeSearch, { SearchResult, VideoSearchResult } from 'yt-search';
 import YouTubePlayer from '../../../components/video/YouTube';
 import SelectionSearchText from '../../../components/search/SelectionSearchText';
 import YouTubeCards from '../../../components/cards/YouTubeCards.tsx';
 
-const DEFAULT_VIDEO_SEARCH = { all: [], videos: [], live: [], lists: [], accounts: [], channels: [], playlists: []};
+const DEFAULT_VIDEO_SEARCH = { all: [], videos: [], live: [], lists: [], accounts: [], channels: [], playlists: [] };
 
 interface Props {
   debug?: boolean;
@@ -18,21 +18,30 @@ function VideoSearch({ debug, skip }: Props) {
   const [selectedVideo, setSelectedVideo] = useState<VideoSearchResult | undefined>(undefined);
 
   const submit = () => {
-    youtubeSearch(searchTerm)
-      .then((videos) => setSearchedVideos(videos));
-  }
+    console.log({ searchTerm });
+    // youtubeSearch(searchTerm)
+    //   .then((videos) => setSearchedVideos(videos));
+  };
 
   if (debug) {
     console.log('Security: ', { debug, skip, searchTerm, searchedVideos });
   }
 
-  return <Box>
-    <SelectionSearchText debug={debug} defaultText='Search Videos' searchTermChanged={setSearchTerm} onSubmit={submit} options={[]} />
-    <Grid container item>
-      <Grid>Videos</Grid>
-      {!!selectedVideo && <YouTubePlayer options={selectedVideo} />}
-      <YouTubeCards debug={debug} searchResult={searchedVideos} selectedVideo={setSelectedVideo} />
-    </Grid>
-  </Box>;
+  return (
+    <Box>
+      <SelectionSearchText
+        debug={debug}
+        defaultText="Search Videos"
+        searchTermChanged={setSearchTerm}
+        onSubmit={submit}
+        options={[]}
+      />
+      <Grid2 container>
+        <Grid2>Videos</Grid2>
+        {!!selectedVideo && <YouTubePlayer options={selectedVideo} />}
+        <YouTubeCards debug={debug} searchResult={searchedVideos} selectedVideo={setSelectedVideo} />
+      </Grid2>
+    </Box>
+  );
 }
 export default VideoSearch;

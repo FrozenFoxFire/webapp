@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card as CardType } from '../models';
+import CardType from '../models/Card';
 import NewsCard from './NewsCard.tsx';
 import CryptoCard from './CryptoCard.tsx';
 import { DisplayedComponents } from '../../constants.tsx';
